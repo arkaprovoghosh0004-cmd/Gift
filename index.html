@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For KitKat 💛</title>
+<style>
+  :root { --ink:#3e3040; --pink:#ffe2e8; --cream:#fff9ed; --orange:#ffb66e; --purple:#c9b8ff; --green:#c8e8d0; }
+  * { box-sizing:border-box }
+  body { margin:0; color:var(--ink); font-family: "Trebuchet MS", system-ui, sans-serif; background:var(--cream); }
+  .page { min-height:100svh; display:grid; place-items:center; padding:28px 16px; overflow:hidden; position:relative; }
+  .blob { position:absolute; border-radius:50%; filter:blur(1px); opacity:.65; z-index:0; }
+  .b1 { width:220px;height:220px;background:var(--pink);top:-70px;left:-70px }
+  .b2 { width:260px;height:260px;background:#e6ddff;bottom:-110px;right:-90px }
+  .card { width:min(100%,650px); background:#fff; border:2px solid #f1e5df; border-radius:28px; padding:clamp(24px,5vw,48px); text-align:center; box-shadow:0 18px 50px #60485d18; position:relative; z-index:1; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:800; color:#9b7b91 }
+  h1 { font-size:clamp(2.2rem,8vw,4.3rem); line-height:1.02; margin:14px 0; letter-spacing:-.05em }
+  h2 { font-size:clamp(1.6rem,5vw,2.4rem); margin:8px 0 14px }
+  p { line-height:1.7; font-size:1.04rem }
+  .muted { color:#806f7c }
+  .mascots { display:flex; justify-content:center; align-items:end; gap:18px; margin:26px 0 20px }
+  .animal { font-size:clamp(3.4rem,12vw,5.2rem); background:#fff3e9; border-radius:24px; padding:10px 17px; transform:rotate(-5deg); animation:bob 2.8s ease-in-out infinite }
+  .animal:last-child { background:#f3efff; transform:rotate(5deg); animation-delay:.4s }
+  @keyframes bob { 0%,100%{translate:0 0} 50%{translate:0 -8px} }
+  button { border:0; border-radius:999px; padding:14px 23px; background:#604b73; color:white; font-weight:800; font-size:1rem; cursor:pointer; margin:8px 5px; box-shadow:0 5px 0 #40334c; transition:transform .15s,box-shadow .15s }
+  button:hover { transform:translateY(-2px); box-shadow:0 7px 0 #40334c }
+  button:active { transform:translateY(3px); box-shadow:0 2px 0 #40334c }
+  button.secondary { background:#f5eaf0; color:#604b73; box-shadow:0 5px 0 #dfcbd8 }
+  .hidden { display:none }
+  .tag { display:inline-block; padding:7px 12px; border-radius:999px; background:#fff1d9; font-size:.85rem; font-weight:800; margin:5px }
+  .panel { background:#fff9f2; border:1px dashed #e8c9b7; border-radius:20px; padding:20px; margin:20px 0; text-align:left }
+  .gift { font-size:5rem; display:inline-block; animation:wobble 1.5s ease-in-out infinite }
+  @keyframes wobble { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg) scale(1.06)} }
+  .letter { text-align:left; white-space:pre-line; background:#fffaf4; padding:22px; border-radius:18px; border-left:5px solid var(--orange) }
+  .footer { margin-top:22px; font-size:.8rem; color:#a18d9a }
+  .dots { display:flex; justify-content:center; gap:7px; margin-bottom:22px }
+  .dot { width:8px;height:8px;border-radius:50%;background:#eadfe8 }
+  .dot.active { background:#80618d; width:22px; border-radius:8px }
+  .quiz-options { display:grid; gap:10px; margin:18px 0 }
+  .quiz-options button { width:100%; margin:0; background:#f6efff; color:#554363; box-shadow:0 4px 0 #dfd3ef }
+  .quiz-options button:hover { background:#eee4ff }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important } }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <section class="card">
+    <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+
+    <section id="s1">
+      <div class="eyebrow">A very official delivery</div>
+      <div class="mascots"><div class="animal" aria-label="goat">🐐</div><div class="animal" aria-label="chocolate">🍫</div></div>
+      <h1>Hey, KitKat!</h1>
+      <p class="muted">A special Bhai Phota transmission has arrived from your favourite Chagol.</p>
+      <span class="tag">100% sibling-approved</span><span class="tag">0% seriousness</span>
+      <p><button onclick="show(2)">Open your gift →</button></p>
+    </section>
+
+    <section id="s2" class="hidden">
+      <div class="eyebrow">Official sibling report · confidential-ish</div>
+      <h2>Some important findings</h2>
+      <div class="panel">
+        <p>📌 <b>Subject:</b> KitKat</p>
+        <p>📌 <b>Known for:</b> random conversations, unexpected jokes, and being a genuinely lovely human.</p>
+        <p>📌 <b>Relationship status:</b> sibling-level nonsense, with occasional wholesome moments.</p>
+        <p>📌 <b>Brother assigned:</b> one (1) Chagol. No exchanges. No refunds.</p>
+      </div>
+      <p class="muted">The council has reviewed the evidence and reached a unanimous conclusion.</p>
+      <button onclick="show(3)">Reveal the conclusion</button>
+    </section>
+
+    <section id="s3" class="hidden">
+      <div class="eyebrow">A highly scientific quiz</div>
+      <h2>What is a Chagol's most important job?</h2>
+      <div class="quiz-options">
+        <button onclick="answer(false)">A. Being sensible all the time</button>
+        <button onclick="answer(true)">B. Annoying KitKat and having her back</button>
+        <button onclick="answer(false)">C. Eating all the snacks</button>
+      </div>
+      <p id="quiz-result" class="muted" aria-live="polite"></p>
+      <button id="continue" class="hidden" onclick="show(4)">Proceed to the actual gift →</button>
+    </section>
+
+    <section id="s4" class="hidden">
+      <div class="eyebrow">One last thing</div>
+      <div class="gift">🎁</div>
+      <h2>A small gift, from your Chagol</h2>
+      <p class="muted">No wrapping paper. No delivery charge. Just a message that comes with a lifetime warranty.</p>
+      <button onclick="document.getElementById('letter').classList.remove('hidden');this.classList.add('hidden')">Open the letter 💌</button>
+      <div id="letter" class="letter hidden">
+        <b>Dear KitKat,</b>
+
+        Happy Bhai Phota! 💛
+
+        We may mostly exchange random conversations, jokes and the occasional dose of sibling-level nonsense, but I'm genuinely glad to have you in my life.
+
+        Thanks for being you. Keep being your wonderfully unpredictable self, keep laughing, keep chasing the things that make you happy, and don't ever lose that spark.
+
+        Your assigned Chagol is officially wishing you happiness, good health, success, and an unreasonable amount of chocolate.
+
+        And remember: you can annoy your Chagol whenever you want. It's apparently part of the job description.
+
+        <b>Happy Bhai Phota, KitKat!</b>
+        — Your Chagol 🐐
+      </div>
+      <div class="footer">Made with code, questionable goat energy, and genuine affection.</div>
+    </section>
+  </section>
+</main>
+<script>
+  function show(n) {
+    for (let i=1;i<=4;i++) document.getElementById('s'+i).classList.toggle('hidden',i!==n);
+    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n-1));
+  }
+  function answer(correct) {
+    const result=document.getElementById('quiz-result');
+    result.textContent=correct
+      ? "Correct. Finally, someone understands the sacred duties of a Chagol. 🐐"
+      : "Incorrect. The council would like to remind you that this is a sibling, not a customer-service department. Try again. 😌";
+    document.getElementById('continue').classList.toggle('hidden',!correct);
+  }
+</script>
+</body>
+</html>
